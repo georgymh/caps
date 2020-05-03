@@ -12,9 +12,6 @@ from utils.model_utils import (
 import cv2
 import numpy as np
 import tensorflow as tf
-# # NOTE: TO PREVENT THE `GatherTree` ERROR WE NEED TO DO THIS.
-# # MORE INFO: https://github.com/tensorflow/tensorflow/issues/12927
-# from tensorflow.contrib.seq2seq.python.ops import beam_search_ops
 
 
 class Cronometer:
