@@ -144,3 +144,8 @@ node_modules/
 # Intellectual Property
 models/
 assets/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
