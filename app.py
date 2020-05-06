@@ -37,10 +37,10 @@ def create_app():
 
     @app.route("/api/caption", methods=["POST"])
     def caption():
-        cronometer = Cronometer()
         logger.info("New caption request:")
 
         try:
+            cronometer = Cronometer()
             image = read_image_from_request(request.data)
             logger.info("\tRead image in %f seconds." % cronometer.record_time())
 
@@ -60,7 +60,7 @@ def create_app():
             )
         except Exception as e:
             # TODO: Better error management.
-            logger.error("Found error during request!")
+            logger.error("\tFound error during request!")
             error_response = json.dumps({
                 "success": False,
                 "error_message": "An error occurred while processing your request. Please try again later.",
