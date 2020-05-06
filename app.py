@@ -20,10 +20,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
-def create_app():
+def create_app(predict_caption_fn, postprocess_caption_fn):
     app = Flask(__name__)
     cors = CORS(app)
-
 
     @app.route("/heartbeat")
     def heartbeat():
@@ -33,7 +32,6 @@ def create_app():
             status=200,
             mimetype="application/json",
         )
-
 
     @app.route("/api/caption", methods=["POST"])
     def caption():
@@ -60,7 +58,7 @@ def create_app():
             )
         except Exception as e:
             # TODO: Better error management.
-            logger.error("\tFound error during request!")
+            logger.exception("\tFound error during request!")
             error_response = json.dumps({
                 "success": False,
                 "error_message": "An error occurred while processing your request. Please try again later.",
@@ -70,7 +68,6 @@ def create_app():
                 status=500,
                 mimetype="application/json",
             )
-
 
     return app
 
@@ -87,7 +84,7 @@ if __name__ == "__main__":
     )
 
     logger.info("Creating app...")
-    app = create_app()
+    app = create_app(predict_caption_fn, postprocess_caption_fn)
 
     logger.info("Starting app...")
     app.run(host='0.0.0.0', debug=True)
