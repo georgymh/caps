@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 
 RUN pip install gunicorn[gevent]
 
-EXPOSE 5000
+EXPOSE 8080
 
 ENTRYPOINT [ "bash" ]
 
