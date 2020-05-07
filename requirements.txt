@@ -16,4 +16,4 @@ opencv_python == 4.2.0.32
 
 # server/utils/flask_utils.py: 14
 # server/utils/model_utils.py: 8,11
-tensorflow == 1.15.0
+tensorflow == 1.15.2
