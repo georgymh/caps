@@ -146,6 +146,11 @@ node_modules/
 # models/
 # assets/
 
+# Custom
+# NOTE: This is to ignore anything github-related when deploying.
+# Useful if we don't want to `git commit` before deploying.
+# .git/
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
