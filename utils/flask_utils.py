@@ -25,8 +25,9 @@ class Cronometer:
         return current_time - past_time
 
 
-def read_image_from_request(str_image):
-    data_array = np.fromstring(str_image, np.uint8)
+def read_image_from_request(request):
+    image_str = request.files['image'].read()
+    data_array = np.fromstring(image_str, np.uint8)
     image = cv2.imdecode(data_array, cv2.IMREAD_COLOR)
     return image
 

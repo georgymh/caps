@@ -39,7 +39,7 @@ def create_app(predict_caption_fn, postprocess_caption_fn):
 
         try:
             cronometer = Cronometer()
-            image = read_image_from_request(request.data)
+            image = read_image_from_request(request)
             logger.info("\tRead image in %f seconds." % cronometer.record_time())
 
             model_output = predict_caption_fn(image)
