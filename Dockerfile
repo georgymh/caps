@@ -13,7 +13,7 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-RUN pip install --no-cache-dir tensorflow==1.15.0
+RUN pip install --no-cache-dir tensorflow-cpu==1.15.0
 
 RUN pip install gunicorn[gevent]
 

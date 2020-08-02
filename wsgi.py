@@ -26,7 +26,7 @@ logger.info("Using the config at {}".format(CONFIG_FILENAME))
 
 GPU_MEMORY = float(os.getenv(
     "GPU_MEMORY",
-    "1.0"
+    "0.0"
 ))
 logger.info("Using the gpu memory fraction: {}".format(GPU_MEMORY))
 
