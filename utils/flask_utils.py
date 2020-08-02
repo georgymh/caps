@@ -79,4 +79,5 @@ def set_up_tensorflow(frozen_model_filename, config_filename, gpu_memory):
     captions_config = load_postprocessing_config(config_filename)
     postprocess_caption_fn = lambda output: model_output_to_captions(output, captions_config)
 
+    print("Returning prediction and post-processing functions")
     return predict_caption_fn, postprocess_caption_fn
