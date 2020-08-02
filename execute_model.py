@@ -15,9 +15,6 @@ import cv2
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# TEST GRAMCAPS:
-#   - python execute_model.py -m models/gramcapsv0_optimized.pb --input_image assets/test_image.jpg --auto_infer_tensor_names --show_caption
-
 
 def make_args():
     parser = argparse.ArgumentParser()
