@@ -4,7 +4,7 @@
 Flask == 1.1.2
 
 # server/app.py: 11
-Flask_Cors == 3.0.8
+Flask_Cors == 3.0.9
 
 # server/utils/flask_utils.py: 13
 numpy == 1.16.6
